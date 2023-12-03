@@ -1,0 +1,23 @@
+name: ci
+on: push
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v3
+            - name: Setup
+              uses: ./.github/actions/bun
+
+            - name: static check
+              run: bun run ci:check
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v3
+            - name: Setup
+              uses: ./.github/actions/bun
+
+            - name: test
+              run: bun run ci:test-group
