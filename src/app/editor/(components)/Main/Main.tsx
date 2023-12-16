@@ -25,7 +25,7 @@ const Main: React.FC = () => {
         ))}
         <span className="w-full border-t border-black block" />
 
-        <div className="tab-content">
+        <div className="tab-content ">
           {activeTab === tabs[0] && <Preview />}
           {activeTab === tabs[1] && <Code />}
           {activeTab === tabs[2] && <Tree />}
