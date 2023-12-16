@@ -3,7 +3,7 @@ import React from 'react';
 import Clip from './Clip';
 
 const Footer = () => (
-  <footer className="py-4 bg-gray-800 text-white text-center flex flex-col items-center gap-1 p-5">
+  <footer className="py-4 bg-gray-800 text-white text-center flex flex-col items-start gap-1 p-5">
     <Clip />
     <Clip />
     <Clip />
