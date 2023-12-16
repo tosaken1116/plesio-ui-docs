@@ -1,9 +1,10 @@
 import React from 'react';
 
-import Check from './Check';
+import Animation from './Sidebar/Animation';
+import Shape from './Sidebar/Shape';
 import Code from './Tabs/Code';
 import Preview from './Tabs/Preview';
-import Tree from './Tabs/Tree';
+import Tree from './Tabs/Tree/Tree';
 
 const Main: React.FC = () => {
   const tabs = ['プレビュー', 'コード', 'ツリー'];
@@ -11,7 +12,7 @@ const Main: React.FC = () => {
 
   return (
     <div className="grid grid-cols-5 h-screen overflow-hidden">
-      <main className="col-span-3 bg-white drop-shadow m-0 ">
+      <main className="col-span-3 bg-white drop-shadow m-0">
         {tabs.map((tab) => (
           <button
             key={tab}
@@ -32,9 +33,8 @@ const Main: React.FC = () => {
         </div>
       </main>
       <div className="col-span-2 bg-slate-800 p-10 grid gap-5 overflow-auto">
-        <Check />
-        <Check />
-        <Check />
+        <Animation />
+        <Shape />
       </div>
     </div>
   );

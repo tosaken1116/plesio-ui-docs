@@ -6,11 +6,11 @@ import { tomorrow } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 const CodeBlock: React.FC = () => {
   const [code, setCode] = useState<string>('');
   return (
-    <div >
+    <div>
       <textarea
         value={code}
         onChange={(e) => setCode(e.target.value)}
-        className="text-black w-full"
+        className="text-black w-full outline-none"
       />
       <SyntaxHighlighter language="tsx" style={tomorrow}>
         {code}

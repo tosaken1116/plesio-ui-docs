@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Check = () => (
+const Animation = () => (
   <fieldset className="bg-white rounded-lg p-5">
     <h1 className="text-black text-2xl font-bold pb-5">アニメーション</h1>
     <div className="space-y-5">
@@ -68,4 +68,4 @@ const Check = () => (
   </fieldset>
 );
 
-export default Check;
+export default Animation;
