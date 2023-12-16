@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Check = () => (
-  <fieldset>
-    <legend className="sr-only">Notifications</legend>
+  <fieldset className="bg-white rounded-lg p-5">
+    <h1 className="text-black text-2xl font-bold pb-5">アニメーション</h1>
     <div className="space-y-5">
       <div className="relative flex items-start">
         <div className="flex h-6 items-center">
@@ -15,7 +15,7 @@ const Check = () => (
           />
         </div>
         <div className="ml-3 text-sm leading-6">
-          <label htmlFor="comments" className="font-medium text-white">
+          <label htmlFor="comments" className="font-medium text-black">
             New comments
           </label>{' '}
           <span id="comments-description" className="text-gray-400">
