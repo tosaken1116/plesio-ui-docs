@@ -1,6 +1,9 @@
 import React from 'react';
 
 import Check from './Check';
+import Code from './Tabs/Code';
+import Preview from './Tabs/Preview';
+import Tree from './Tabs/Tree';
 
 const Main: React.FC = () => {
   const tabs = ['プレビュー', 'コード', 'ツリー'];
@@ -8,28 +11,26 @@ const Main: React.FC = () => {
 
   return (
     <div className="grid grid-cols-5 h-screen overflow-hidden">
-      <main className="col-span-3 bg-black drop-shadow m-0">
+      <main className="col-span-3 bg-white drop-shadow m-0 ">
         {tabs.map((tab) => (
           <button
             key={tab}
-            className={`px-3 py-2 ${
-              activeTab === tab
-                ? 'border-l border-t border-r rounded-t bg-slate-800'
-                : ''
+            className={`px-3 py-2 text-black select-none ${
+              activeTab === tab ? '  bg-gray-300 ' : ''
             }`}
             onClick={() => setActiveTab(tab)}
           >
             {tab}
           </button>
         ))}
-        <hr className="w-full" />
+        <span className="w-full border-t border-black block" />
+
         <div className="tab-content">
-          {activeTab === tabs[0] && `${tabs[0]}の内容`}
-          {activeTab === tabs[1] && `${tabs[1]}の内容`}
-          {activeTab === tabs[2] && `${tabs[2]}の内容`}
+          {activeTab === tabs[0] && <Preview />}
+          {activeTab === tabs[1] && <Code />}
+          {activeTab === tabs[2] && <Tree />}
         </div>
       </main>
-
       <div className="col-span-2 bg-slate-800 p-10 grid gap-5 overflow-auto">
         <Check />
         <Check />
