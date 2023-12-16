@@ -1,22 +1,52 @@
-import React from 'react';
+'use client';
 
-const Clip: React.FC = ({ x, y, color = '#0ea5e9' }) => {
-  const width = Math.floor(Math.random() * 1500) + 150;
+import React, { useEffect, useRef, useState } from 'react';
+
+const Clip: React.FC = ({ x, y, color = '#0ea5e9', width = 100, offset }) => {
+  const [pos, setPos] = useState({ x: x, y: y });
+  const [dragging, setDragging] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const handleMouseMove = (event) => {
+      if (dragging) {
+        console.log(offset);
+        setPos({
+          x: event.clientX - offset.x - width / 2 + offset.scrollX,
+          y: pos.y,
+        });
+      }
+    };
+
+    const handleMouseUp = () => {
+      setDragging(false);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [dragging, pos]);
 
   return (
-    <span
-      className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  drop-shadow-xl	"
+    <button
+      ref={ref}
+      className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white drop-shadow-xl	"
       style={{
         position: 'absolute',
         width: `${width}px`,
-        left: `${x}px`,
-        top: `${y + 15}px`,
+        left: `${pos.x}px`,
+        top: `${pos.y + 15}px`,
         userSelect: 'none',
         backgroundColor: color as string,
       }}
+      onMouseDown={() => setDragging(true)}
     >
       クリップ
-    </span>
+    </button>
   );
 };
 
