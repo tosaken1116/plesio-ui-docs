@@ -9,7 +9,7 @@ const colors = {
 };
 
 const Footer = () => (
-  <footer className="py-4 bg-gray-800 text-white text-center flex flex-col items-start gap-1 p-5 relative overflow-x-scroll h-96">
+  <footer className="py-4 bg-gray-800 text-white text-center flex flex-col items-start gap-1 p-5 relative overflow-x-scroll h-[600px]">
     {Array.from({ length: 50 }, (_, i) => (
       <div
         key={i}
