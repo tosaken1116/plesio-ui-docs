@@ -19,7 +19,6 @@ const Footer: React.FC = () => {
   }, []);
 
   const toggleVisibility = () => {
-    console.log("dada")
     const rect = ref.current.getBoundingClientRect();
     const offsetX = rect.left;
     setOffset({ x: offsetX, y: 0, scrollX: ref.current.scrollLeft });
@@ -30,12 +29,18 @@ const Footer: React.FC = () => {
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
+  const timeline = {
+    id: 1,
+    x: 0,
+    y: 0,
+    color: colors.orange,
+  };
+
   return (
     <footer
       ref={ref}
       className="py-4 bg-gray-700 text-white text-center flex flex-col items-start gap-1 p-5 relative overflow-x-scroll h-[600px] "
     >
-      <button >dada</button>
       {Array.from({ length: 50 }, (_, i) => (
         <div
           key={i}
@@ -64,7 +69,7 @@ const Footer: React.FC = () => {
               ]
             }
             offset={offset}
-            width={300}
+            width={500}
           />
         </div>
       ))}
