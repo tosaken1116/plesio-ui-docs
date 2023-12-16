@@ -23,11 +23,6 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "engines": {
-    "npm": "bun please",
-    "yarn": "bun please",
-    "pnpm": "bun please"
-  },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss}": [
       "bun run check:lint --fix",
