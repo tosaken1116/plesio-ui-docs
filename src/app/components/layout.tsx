@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { PageWithHeader } from '@/components/ui/Header';
+import { PageWithSidebar } from '@/components/ui/Sidebar';
 
 export const metadata = {
   title: 'Components',
@@ -8,7 +9,9 @@ export const metadata = {
 };
 
 const ComponentsLayout = ({ children }: { children: ReactNode }): ReactNode => (
-  <PageWithHeader>{children}</PageWithHeader>
+  <PageWithHeader>
+    <PageWithSidebar>{children}</PageWithSidebar>
+  </PageWithHeader>
 );
 
 export default ComponentsLayout;

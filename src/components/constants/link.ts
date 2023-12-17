@@ -87,3 +87,41 @@ export const COMPONENTS_LINKS = [
     isDraft: false,
   },
 ] as const;
+
+export const ANIMATION_LINKS = [
+  {
+    href: '/Fade',
+    label: 'Fade',
+    isDraft: false,
+  },
+  {
+    href: '/Squeeze',
+    label: 'Squeeze',
+    isDraft: false,
+  },
+  {
+    href: '/BackGroundColorFade',
+    label: 'BackGroundColorFade',
+    isDraft: false,
+  },
+  {
+    href: '/Shake',
+    label: 'Shake',
+    isDraft: false,
+  },
+  {
+    href: '/TextColor',
+    label: 'TextColor',
+    isDraft: false,
+  },
+  {
+    href: '/Expand',
+    label: 'Expand',
+    isDraft: false,
+  },
+  {
+    href: '/Slide',
+    label: 'Slide',
+    isDraft: false,
+  },
+] as const;

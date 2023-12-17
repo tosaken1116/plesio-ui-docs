@@ -1,7 +1,7 @@
-import { Grid, Typography } from '@plesiosaurus/ui';
-import Link from 'next/link';
+import { Stack, Typography } from '@plesiosaurus/ui';
 
-import { COMPONENTS_LINKS } from '@/components/constants/link';
+import { ANIMATION_LINKS, COMPONENTS_LINKS } from '@/components/constants/link';
+import { ComponentLink } from '@/components/ui/ComponentLink';
 
 export const Screen: React.FC = () => (
   <div className="p-12">
@@ -11,43 +11,15 @@ export const Screen: React.FC = () => (
     <Typography variant="p" component="p">
       components provided by plesiosaurus ui
     </Typography>
-    <Grid gridTemplateColumns={6} className="mt-6">
+    <Stack spacing="4px">
       {COMPONENTS_LINKS.map((component) => (
         <ComponentLink {...component} key={component.href} />
       ))}
-    </Grid>
+    </Stack>
+    <Stack spacing="4px">
+      {ANIMATION_LINKS.map((component) => (
+        <ComponentLink {...component} key={component.href} />
+      ))}
+    </Stack>
   </div>
 );
-
-const ComponentLink = ({
-  href,
-  label,
-  isDraft,
-}: (typeof COMPONENTS_LINKS)[number]): JSX.Element => {
-  if (isDraft)
-    return (
-      <Typography
-        component="strong"
-        variant="strong"
-        className="text-gray-600"
-        animationProps={{
-          hover: {
-            key: 'shake',
-            option: {
-              duration: '0.5s',
-              delay: '0s',
-            },
-          },
-        }}
-      >
-        {`${label} coming soon...`}
-      </Typography>
-    );
-  return (
-    <Link href={`/components${href}`}>
-      <Typography component="strong" variant="strong">
-        {label}
-      </Typography>
-    </Link>
-  );
-};
