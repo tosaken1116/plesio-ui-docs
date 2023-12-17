@@ -9,35 +9,30 @@ const Preview = () => {
 
   const [x, setX] = useState('none');
   return (
-    <div className="">
-      <div>
-        <Button
-          radius={selected.radius}
-          outline={selected.outline}
-          state={selected.state}
-          typography={selected.typography}
-          animationProps={{
-            hover: {
-              key: 'squeeze',
-              option: {
-                duration: '1s',
-                delay: '0s',
-                axis: 'x',
-              },
+    <div
+      className="flex items-center justify-center h-full my-auto mt-52"
+      style={{
+        transform: 'scale(5)',
+      }}
+    >
+      <Button
+        radius={selected.radius}
+        outline={selected.outline}
+        state={selected.state}
+        typography={selected.typography}
+        animationProps={{
+          hover: {
+            key: 'squeeze',
+            option: {
+              duration: '1s',
+              delay: '0s',
+              axis: 'x',
             },
-          }}
-        >
-          ボタン
-        </Button>
-      </div>
-      <button
-        onClick={() => {
-          setX(x === 'none' ? 'lg' : 'none');
+          },
         }}
-        className="bg-red-500"
       >
-        だだ
-      </button>
+        ボタン
+      </Button>
     </div>
   );
 };
