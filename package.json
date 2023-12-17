@@ -30,9 +30,16 @@
     ]
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
     "@types/react-syntax-highlighter": "^15.5.11",
+    "@vanilla-extract/css": "^1.14.0",
+    "@vanilla-extract/recipes": "^0.5.1",
+    "@vanilla-extract/sprinkles": "^1.6.1",
     "babel-plugin-prismjs": "^2.1.0",
+    "clsx": "^2.0.0",
     "dedent": "^1.5.1",
+    "modern-normalize": "^2.0.0",
     "next": "14.0.4",
     "prism": "^4.1.2",
     "react": "18.2.0",

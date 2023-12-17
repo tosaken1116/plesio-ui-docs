@@ -7,14 +7,14 @@ const CodeBlock: React.FC = () => {
   const [code, setCode] = useState<string>('');
   return (
     <div>
-      <textarea
-        value={code}
-        onChange={(e) => setCode(e.target.value)}
-        className="text-black w-full outline-none"
-      />
       <SyntaxHighlighter language="tsx" style={tomorrow}>
         {code}
       </SyntaxHighlighter>
+      <textarea
+        value={code}
+        onChange={(e) => setCode(e.target.value)}
+        className="text-black w-full outline-none h-48"
+      />
     </div>
   );
 };
