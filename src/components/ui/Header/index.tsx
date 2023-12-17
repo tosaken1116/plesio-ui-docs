@@ -4,12 +4,14 @@ import { Typography } from '@plesiosaurus/ui';
 import Link from 'next/link';
 
 export const Header: React.FC = () => (
-  <nav>
-    <Link href="/">
-      <Typography variant="h1" component="p">
-        🦖Plesiosaurus UI
-      </Typography>
-    </Link>
+  <nav className="h-16">
+    <div className="backdrop-blur-sm w-full h-16 fixed">
+      <Link href="/">
+        <Typography variant="h1" component="p">
+          🦖Plesiosaurus UI
+        </Typography>
+      </Link>
+    </div>
   </nav>
 );
 
