@@ -21,10 +21,11 @@ export const ComponentLink = ({
         className="text-gray-600"
         animationProps={{
           hover: {
-            key: 'shake',
+            key: 'squeeze',
             option: {
               duration: '0.5s',
               delay: '0s',
+              axis: 'x',
             },
           },
         }}
