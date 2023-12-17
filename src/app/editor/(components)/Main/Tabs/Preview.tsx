@@ -1,27 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Button } from '@plesiosaurus/ui';
 
-const Preview = () => (
-  <div className="">
-    <div>
-      <Button
-        radius={"md"}
-        animationProps={{
-          hover: {
-            key: 'squeeze',
-            option: {
-              duration: '1s',
-              delay: '1s',
-              axis: 'x',
+import { SelectedContext } from '../../Context/SelectedContext';
+
+const Preview = () => {
+  const { selected } = React.useContext(SelectedContext);
+
+  const [x, setX] = useState('none');
+  return (
+    <div className="">
+      <div>
+        <Button
+          radius={selected}
+          animationProps={{
+            hover: {
+              key: 'squeeze',
+              option: {
+                duration: '1s',
+                delay: '0s',
+                axis: 'x',
+              },
             },
-          },
+          }}
+        >
+          {selected}
+        </Button>
+      </div>
+      <button
+        onClick={() => {
+          setX(x === 'none' ? 'lg' : 'none');
         }}
+        className="bg-red-500"
       >
-        click me!
-      </Button>
+        だだ
+      </button>
     </div>
-  </div>
-);
+  );
+};
 
 export default Preview;
