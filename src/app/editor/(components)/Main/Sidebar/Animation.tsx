@@ -3,20 +3,37 @@ import React from 'react';
 import Select from './select';
 
 const Animation = () => {
-  const animations = [
-    { id: 1, name: 'radius' },
-    { id: 2, name: 'Arlene Mccoy' },
-    { id: 3, name: 'Radius' },
-    { id: 4, name: 'typography' },
+  const state = [
+    { id: 1, name: 'primary' },
+    { id: 2, name: 'secondary' },
+    { id: 3, name: 'error' },
   ];
 
+  const radius = [
+    { id: 1, name: 'none' },
+    { id: 2, name: 'lg' },
+    { id: 3, name: 'md' },
+  ];
+
+  const outline = [
+    { id: 1, name: 'none' },
+    { id: 2, name: 'primary' },
+    { id: 3, name: 'secondary' },
+    { id: 4, name: 'error' },
+  ];
+
+  const typography = [{ id: 1, name: 'body-medium' }];
   return (
     <fieldset className="bg-white rounded-lg p-5">
       <h1 className="text-black text-2xl font-bold pb-5">アニメーション</h1>
-      <Select title="radius" list={animations} />
-      <Select title="outline" list={animations} />
+      <Select title="state" list={state} />
+      <Select title="radius" list={radius} />
+      <Select title="outline" list={outline} />
+      <Select title="typography" list={typography} />
 
-      <div className="space-y-5">
+      <Select title="animationProps" list={typography} />
+
+      {/* <div className="space-y-5">
         <div className="relative flex items-start">
           <div className="flex h-6 items-center">
             <input
@@ -77,7 +94,7 @@ const Animation = () => {
             </span>
           </div>
         </div>
-      </div>
+      </div> */}
     </fieldset>
   );
 };
