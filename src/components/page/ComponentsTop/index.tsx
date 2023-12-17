@@ -13,7 +13,7 @@ export const Screen: React.FC = () => (
     </Typography>
     <Grid gridTemplateColumns={6}>
       {COMPONENTS_LINKS.map((component) => (
-        <ComponentLink {...component} key={component.href} />
+        <ComponentLink path="components" {...component} key={component.href} />
       ))}
     </Grid>
   </div>

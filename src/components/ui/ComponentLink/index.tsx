@@ -6,12 +6,13 @@ import type { ANIMATION_LINKS } from '@/components/constants/link';
 import { type COMPONENTS_LINKS } from '@/components/constants/link';
 
 export const ComponentLink = ({
+  path,
   href,
   label,
   isDraft,
-}:
-  | (typeof COMPONENTS_LINKS)[number]
-  | (typeof ANIMATION_LINKS)[number]): JSX.Element => {
+}: ((typeof COMPONENTS_LINKS)[number] | (typeof ANIMATION_LINKS)[number]) & {
+  path: string;
+}): JSX.Element => {
   if (isDraft)
     return (
       <Typography
@@ -32,7 +33,7 @@ export const ComponentLink = ({
       </Typography>
     );
   return (
-    <Link href={`/components${href}`}>
+    <Link href={`/${path}${href}`}>
       <Typography component="strong" variant="strong">
         {label}
       </Typography>

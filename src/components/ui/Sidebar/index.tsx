@@ -14,7 +14,7 @@ export const Sidebar: React.FC = () => (
     </Link>
     <Stack direction="column" spacing="4px" className="p-4">
       {COMPONENTS_LINKS.map((component) => (
-        <ComponentLink {...component} key={component.href} />
+        <ComponentLink path="components" {...component} key={component.href} />
       ))}
     </Stack>
     <Link href="/animations">
@@ -24,7 +24,7 @@ export const Sidebar: React.FC = () => (
     </Link>
     <Stack direction="column" spacing="4px" className="p-4">
       {ANIMATION_LINKS.map((component) => (
-        <ComponentLink {...component} key={component.href} />
+        <ComponentLink path="animations" {...component} key={component.href} />
       ))}
     </Stack>
   </nav>
