@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react';
 
-import Badge from './components/Badge/page';
+import CheckBox from './components/CheckBox/page';
 
 const Home = (): ReactNode => (
-  <Badge />
+  <CheckBox />
 );
 
 export default Home;
