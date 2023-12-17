@@ -6,7 +6,10 @@ export const SelectedContext = React.createContext({
     radius: null,
     outline: null,
     typography: null,
+    key: 'squeeze',
+    duration: '0s',
+    axis: 'x',
+    delay: '0s',
   },
   setSelected: () => {},
-
 });

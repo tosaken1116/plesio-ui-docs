@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { SelectedContext } from '../Context/SelectedContext';
 
 import Animation from './Sidebar/Animation';
-import Shape from './Sidebar/Shape';
+import Property from './Sidebar/Property';
 import Code from './Tabs/Code';
 import Preview from './Tabs/Preview';
 import Tree from './Tabs/Tree/Tree';
@@ -16,6 +16,10 @@ const Main: React.FC = () => {
     radius: null,
     outline: null,
     typography: null,
+    key: 'squeeze',
+    duration: '0s',
+    axis: 'x',
+    delay: '0s',
   });
   return (
     <SelectedContext.Provider value={{ selected, setSelected }}>
@@ -41,8 +45,8 @@ const Main: React.FC = () => {
           </div>
         </main>
         <div className="col-span-2 bg-slate-800 px-10 grid gap-5 overflow-auto py-5">
+          <Property />
           <Animation />
-          <Shape />
         </div>
       </div>
     </SelectedContext.Provider>
