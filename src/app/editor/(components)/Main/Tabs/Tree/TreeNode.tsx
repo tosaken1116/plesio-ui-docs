@@ -1,16 +1,21 @@
-const TreeNode = ({ node }) => (
-  <div className="relative ml-10">
-    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 text-white">
-      {node.name}
+import { useState } from 'react';
+import React from 'react';
+
+const TreeNode = ({ x, y, name }) => {
+  const [pos, setPos] = useState({ x: x, y: y });
+
+  return (
+    <div
+      className=" rounded-2xl bg-blue-500 p-5 select-none"
+      style={{
+        position: 'absolute',
+        top: pos.y,
+        left: pos.x + 200,
+      }}
+    >
+      {name}
     </div>
-    {node.children && node.children.length > 0 && (
-      <div className="border-l-2 border-blue-500 pl-8 mt-2">
-        {node.children.map((childNode) => (
-          <TreeNode key={childNode.id} node={childNode} />
-        ))}
-      </div>
-    )}
-  </div>
-);
+  );
+};
 
 export default TreeNode;
