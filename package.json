@@ -35,7 +35,7 @@
     ]
   },
   "dependencies": {
-    "@plesiosaurus/ui": "^0.6.2",
+    "@plesiosaurus/ui": "^0.6.3",
     "@types/react-syntax-highlighter": "^15.5.11",
     "next": "14.0.4",
     "react": "18.2.0",

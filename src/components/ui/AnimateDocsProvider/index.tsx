@@ -9,7 +9,7 @@ import { ComponentProvider } from '../ComponentProvider';
 import type { AnimationProps } from '@plesiosaurus/ui/types/libs/animation/variant/AnimationFactory';
 
 type Props = {
-  Component: React.FC<{ animationProps: AnimationProps; children?: ReactNode }>;
+  Component: React.FC<{ animationProps: AnimationProps; children?: ReactNode; }>;
   componentName: string;
 };
 type AnimateKeys = 'slide' | 'squeeze' | 'bgColorFade' | 'shake' | 'textColor';
