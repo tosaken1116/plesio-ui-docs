@@ -11,18 +11,8 @@ import Tree from './Tabs/Tree/Tree';
 const Main: React.FC = () => {
   const tabs = ['プレビュー', 'コード', 'ツリー'];
   const [activeTab, setActiveTab] = React.useState(tabs[0]);
-  const [selected, setSelected] = useState({
-    state: null,
-    radius: null,
-    outline: null,
-    typography: null,
-    key: 'squeeze',
-    duration: '0s',
-    axis: 'x',
-    delay: '0s',
-  });
+
   return (
-    <SelectedContext.Provider value={{ selected, setSelected }}>
       <div className="grid grid-cols-5 h-screen overflow-hidden">
         <main className="col-span-3 bg-white drop-shadow m-0">
           {tabs.map((tab) => (
@@ -49,7 +39,6 @@ const Main: React.FC = () => {
           <Animation />
         </div>
       </div>
-    </SelectedContext.Provider>
   );
 };
 

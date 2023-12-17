@@ -6,9 +6,14 @@ const colors = {
   orange: '#f97316',
   green: '#22c55e',
   red: '#f43f5e',
+  blue: '#38bdf8',
 };
 
+import { SelectedContext } from '../Context/SelectedContext';
+
 const Footer: React.FC = () => {
+  const { selected } = React.useContext(SelectedContext);
+
   const ref = useRef(null);
   const [offset, setOffset] = useState({ x: 0, y: 0, scrollX: 0 });
 
@@ -28,13 +33,8 @@ const Footer: React.FC = () => {
     ref.current.addEventListener('scroll', toggleVisibility);
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
-
-  const timeline = {
-    id: 1,
-    x: 0,
-    y: 0,
-    color: colors.orange,
-  };
+  const duration = Number(selected.duration.replace('s', ''));
+  const delay = Number(selected.delay.replace('s', ''));
 
   return (
     <footer
@@ -52,27 +52,43 @@ const Footer: React.FC = () => {
             height: '100%',
           }}
         >
-          {i / 10}
+          {i / 2}
         </div>
       ))}
 
-      {Array.from({ length: 5 }, (_, i) => (
-        <div key={i}>
-          <Clip
-            y={i * 50 + 50}
-            x={Math.floor(Math.random() * 1500)}
-            color={
-              colors[
-                Object.keys(colors)[
-                  Math.floor(Math.random() * Object.keys(colors).length)
-                ]
-              ]
-            }
-            offset={offset}
-            width={500}
-          />
-        </div>
-      ))}
+      <Clip
+        y={0 * 50 + 50}
+        x={50 + delay * 200}
+        color={colors.green}
+        offset={offset}
+        width={duration * 200}
+        text="イン"
+      />
+      <Clip
+        y={0 * 50 + 50}
+        x={50 + delay * 200 + duration * 200}
+        color={colors.green}
+        offset={offset}
+        text="アウト"
+        width={duration * 200}
+      />
+
+      <Clip
+        y={1 * 50 + 50}
+        x={50}
+        color={colors.orange}
+        offset={offset}
+        text="イン"
+        width={delay * 200}
+      />
+      <Clip
+        y={1 * 50 + 50}
+        x={50 + delay * 200 + duration * 200 * 2}
+        color={colors.orange}
+        offset={offset}
+        text="アウト"
+        width={delay * 200}
+      />
     </footer>
   );
 };

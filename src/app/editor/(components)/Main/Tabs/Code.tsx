@@ -39,11 +39,11 @@ const CodeBlock: React.FC = () => {
       <SyntaxHighlighter language="tsx" style={tomorrow}>
         {code}
       </SyntaxHighlighter>
-      <textarea
+      {/* <textarea
         value={code}
         onChange={(e) => setCode(e.target.value)}
         className="text-black w-full outline-none h-48"
-      />
+      /> */}
     </div>
   );
 };
