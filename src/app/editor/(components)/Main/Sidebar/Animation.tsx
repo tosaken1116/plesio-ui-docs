@@ -3,6 +3,7 @@ import React from 'react';
 import Select from './select';
 
 const Animation = () => {
+
   const state = [
     { id: 1, name: 'primary' },
     { id: 2, name: 'secondary' },
