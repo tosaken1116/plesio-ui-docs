@@ -12,7 +12,10 @@ const Preview = () => {
     <div className="">
       <div>
         <Button
-          radius={selected}
+          radius={selected.radius}
+          outline={selected.outline}
+          state={selected.state}
+          typography={selected.typography}
           animationProps={{
             hover: {
               key: 'squeeze',
@@ -24,7 +27,7 @@ const Preview = () => {
             },
           }}
         >
-          {selected}
+          ボタン
         </Button>
       </div>
       <button

@@ -3,21 +3,32 @@ import { Fragment, useContext, useState } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 
-function classNames(...classes) {
+function classNames(...classes: (string | boolean)[]): string {
   return classes.filter(Boolean).join(' ');
 }
 
 import { SelectedContext } from '../../Context/SelectedContext';
 
-export default function Select({ title, list }) {
-  const { setSelected } = useContext(SelectedContext);
-  const [sele, setSele] = useState(list[0]);
+interface Item {
+  name: string;
+  id: number;
+}
 
-  const handleSelectChange = (item) => {
-    setSelected(item.name);
+interface SelectProps {
+  title: string;
+  list: Item[];
+}
+
+const Select: React.FC<SelectProps> = ({ title, list }) => {
+  const { setSelected } = useContext(SelectedContext);
+  const [selectItem, setSelectItem] = useState<Item>(list[0]);
+
+  const handleSelectChange = (item: Item): void => {
+    setSelected((prevSelected) => ({ ...prevSelected, [title]: item.name }));
+    setSelectItem(item);
   };
   return (
-    <Listbox value={sele} onChange={handleSelectChange}>
+    <Listbox value={selectItem} onChange={handleSelectChange}>
       {({ open }) => (
         <>
           <Listbox.Label className="block text-sm font-medium leading-6 text-gray-900">
@@ -25,7 +36,9 @@ export default function Select({ title, list }) {
           </Listbox.Label>
           <div className="relative mt-2">
             <Listbox.Button className="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
-              <span className="block truncate select-none">{sele.name}</span>
+              <span className="block truncate select-none">
+                {selectItem?.name}
+              </span>
               <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                 <ChevronUpDownIcon
                   className="h-5 w-5 text-gray-400"
@@ -42,7 +55,7 @@ export default function Select({ title, list }) {
               leaveTo="opacity-0"
             >
               <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                {list.map((person) => (
+                {list.map((person: Item) => (
                   <Listbox.Option
                     key={person.id}
                     className={({ active }) =>
@@ -85,4 +98,6 @@ export default function Select({ title, list }) {
       )}
     </Listbox>
   );
-}
+};
+
+export default Select;

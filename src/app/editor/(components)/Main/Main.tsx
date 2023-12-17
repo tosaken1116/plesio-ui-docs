@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import { SelectedContext } from '../Context/SelectedContext';
 
 import Animation from './Sidebar/Animation';
 import Shape from './Sidebar/Shape';
 import Code from './Tabs/Code';
 import Preview from './Tabs/Preview';
 import Tree from './Tabs/Tree/Tree';
-import { SelectedContext } from '../Context/SelectedContext';
 
 const Main: React.FC = () => {
   const tabs = ['プレビュー', 'コード', 'ツリー'];
   const [activeTab, setActiveTab] = React.useState(tabs[0]);
-  const [selected, setSelected] = React.useState(null);
-
+  const [selected, setSelected] = useState({
+    state: null,
+    radius: null,
+    outline: null,
+    typography: null,
+  });
   return (
     <SelectedContext.Provider value={{ selected, setSelected }}>
       <div className="grid grid-cols-5 h-screen overflow-hidden">

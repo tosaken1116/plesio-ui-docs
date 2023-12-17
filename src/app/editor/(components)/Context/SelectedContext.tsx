@@ -1,6 +1,12 @@
 import React from 'react';
 
 export const SelectedContext = React.createContext({
-  selected: null,
+  selected: {
+    state: null,
+    radius: null,
+    outline: null,
+    typography: null,
+  },
   setSelected: () => {},
+
 });
