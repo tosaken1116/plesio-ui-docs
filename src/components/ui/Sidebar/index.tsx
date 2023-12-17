@@ -19,7 +19,7 @@ export const Sidebar: React.FC = () => (
     </Stack>
     <Link href="/animations">
       <Typography variant="h4" component="h4">
-        Animation
+        Animations
       </Typography>
     </Link>
     <Stack direction="column" spacing="4px" className="p-4">
