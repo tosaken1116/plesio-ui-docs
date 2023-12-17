@@ -44,7 +44,7 @@ const ComponentLink = ({
       </Typography>
     );
   return (
-    <Link href={href}>
+    <Link href={`/components${href}`}>
       <Typography component="strong" variant="strong">
         {label}
       </Typography>
