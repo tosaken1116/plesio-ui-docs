@@ -9,7 +9,7 @@ const Preview = () => {
 
   return (
     <div
-      className="flex items-center justify-center h-full my-auto mt-52"
+      className="flex items-center justify-center h-full my-auto mt-60"
       style={{
         transform: 'scale(7)',
       }}

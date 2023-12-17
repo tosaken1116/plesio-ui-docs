@@ -2,7 +2,10 @@ import React from 'react';
 
 import Select from './select';
 
-const key = [{ id: 1, name: 'squeeze' }];
+const key = [
+  { id: 1, name: 'squeeze' },
+  { id: 2, name: 'shake' },
+];
 
 const duration = [
   { id: 1, name: '0s' },
