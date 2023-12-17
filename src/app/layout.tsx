@@ -12,7 +12,7 @@ export const metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }): ReactNode => (
   <html lang="en" className="dark">
-    <body className={`${inter.className} p-12 gap-12 flex flex-col w-4/5`}>
+    <body className={`${inter.className} gap-12 flex flex-col`}>
       {children}
     </body>
   </html>
