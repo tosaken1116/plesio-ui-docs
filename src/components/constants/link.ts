@@ -12,6 +12,31 @@ export const COMPONENTS_LINKS = [
     isDraft: true,
   },
   {
+    href: '/CheckBox',
+    label: 'CheckBox',
+    isDraft: false,
+  },
+  {
+    href: '/Input',
+    label: 'Input',
+    isDraft: false,
+  },
+  {
+    href: '/Progress',
+    label: 'Progress',
+    isDraft: true,
+  },
+  {
+    href: '/Switch',
+    label: 'Switch',
+    isDraft: false,
+  },
+  {
+    href: '/Tooltip',
+    label: 'Tooltip',
+    isDraft: true,
+  },
+  {
     href: '/Button',
     label: 'Button',
     isDraft: false,
