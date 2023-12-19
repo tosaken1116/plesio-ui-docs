@@ -7,13 +7,13 @@ import { ANIMATION_LINKS, COMPONENTS_LINKS } from '@/components/constants/link';
 
 export const Sidebar: React.FC = () => (
   <nav className="w-96">
-    <div className="fixed p-4">
+    <div className="fixed p-4 overflow-scroll h-[calc(100vh-4rem)]">
       <Link href="/components">
         <Typography variant="h4" component="h4">
           Components
         </Typography>
       </Link>
-      <Stack direction="column" spacing="4px" className="p-4">
+      <Stack direction="column" spacing="4" className="p-4">
         {COMPONENTS_LINKS.map((component) => (
           <ComponentLink
             path="components"
@@ -27,7 +27,7 @@ export const Sidebar: React.FC = () => (
           Animations
         </Typography>
       </Link>
-      <Stack direction="column" spacing="4px" className="p-4">
+      <Stack direction="column" spacing="4" className="p-4">
         {ANIMATION_LINKS.map((component) => (
           <ComponentLink
             path="animations"
@@ -46,6 +46,8 @@ type Props = {
 export const PageWithSidebar: React.FC<Props> = ({ children }) => (
   <div className="flex">
     <Sidebar />
-    <main className="p-4">{children}</main>
+    <main className="p-4 w-[calc(100vw-24rem)] h-[calc(100vh-4rem)]">
+      {children}
+    </main>
   </div>
 );

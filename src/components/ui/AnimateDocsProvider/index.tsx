@@ -9,7 +9,7 @@ import { ComponentProvider } from '../ComponentProvider';
 import type { AnimationProps } from '@plesiosaurus/ui/types/libs/animation/variant/AnimationFactory';
 
 type Props = {
-  Component: React.FC<{ animationProps: AnimationProps; children?: ReactNode; }>;
+  Component: React.FC<{ animationProps: AnimationProps; children?: ReactNode }>;
   componentName: string;
 };
 type AnimateKeys = 'slide' | 'squeeze' | 'bgColorFade' | 'shake' | 'textColor';
@@ -22,7 +22,7 @@ export const AnimateDocsProvider: React.FC<Props> = ({
     <Typography variant="h3" component="h3">
       {`Animated ${componentName}`}
     </Typography>
-    <Stack direction="column" spacing="48px" className=" gap-12">
+    <Stack direction="column" spacing="48" className=" gap-12">
       {(
         [
           { animationName: 'slide', props: { direction: 'bottom' } },

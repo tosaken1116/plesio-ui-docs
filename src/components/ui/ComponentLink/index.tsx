@@ -18,7 +18,7 @@ export const ComponentLink = ({
       <Typography
         component="strong"
         variant="strong"
-        className="text-gray-600"
+        className="text-gray-600 w-fit"
         animationProps={{
           hover: {
             key: 'squeeze',

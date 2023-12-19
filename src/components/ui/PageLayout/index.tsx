@@ -7,7 +7,7 @@ type Props = {
 };
 
 export const PageLayout: React.FC<Props> = ({ children }) => (
-  <Stack spacing="4rem" direction="column">
+  <Stack spacing="4" direction="column" className="h-full">
     {children}
   </Stack>
 );

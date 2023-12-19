@@ -20,6 +20,6 @@ export const PageWithHeader: React.FC<{ children: ReactNode }> = ({
 }) => (
   <div>
     <Header />
-    <main>{children}</main>
+    <main className="h-[calc(100vh-4rem)]">{children}</main>
   </div>
 );
